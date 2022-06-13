@@ -88,3 +88,15 @@ let twoSum1 = function(nums, target) {
       }
   }
 };
+
+//and I need to learn hashmap:
+var twoSumHashmap = function(nums, target) {
+  let matchMap = {};
+  for(let i = 0; i < nums.length; i++){
+  let compliment = target - nums[i];
+      if(compliment in matchMap){
+          return [i, matchMap[compliment]]
+      }
+      matchMap[nums[i]] = i;
+  }
+};
