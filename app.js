@@ -70,4 +70,21 @@ var twoSum = function(nums, target) {
 //outcome
 //Runtime: 280 ms, faster than 7.66% of JavaScript online submissions for Two Sum.
 // Memory Usage: 42.1 MB, less than 92.21% of JavaScript online submissions for Two Sum.
-// ^ this is so sad.....
+// ^ this is so sad..... here is a good explanation https://www.code-recipe.com/post/two-sum
+
+//here is another solution that makes so much more sense, instead of using two loops just make j = i+1 to avoid the repeat
+let twoSum1 = function(nums, target) {
+  let final=[];
+  for(let i=0;i<nums.length;i++){
+      let j=i+1;
+      console.log(j,'j');
+      while(j<nums.length){
+          if(nums[i]+nums[j]===target){
+              final.push(i);
+              final.push(j);
+              return final;
+          }
+          j++;
+      }
+  }
+};
