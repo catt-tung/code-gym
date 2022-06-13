@@ -59,10 +59,15 @@ var twoSum = function(nums, target) {
   let output = []
   for (let i=0; i<nums.length; i++) {
       let testNum = nums[i]
-      for (let j=0; j<nums.length; j++) {
-          if (testNum + nums[j] === target && !output.includes(i)) {
-            output.push(i,j)
+      for (let j=1; j<nums.length; j++) {
+          if (testNum + nums[j] === target && !output.includes(i) && i !== j) {
+              output.push(i,j)
           }
       }
   } return output
 };
+
+//outcome
+//Runtime: 280 ms, faster than 7.66% of JavaScript online submissions for Two Sum.
+// Memory Usage: 42.1 MB, less than 92.21% of JavaScript online submissions for Two Sum.
+// ^ this is so sad.....
