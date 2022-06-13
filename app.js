@@ -51,3 +51,18 @@ function array_diff3(a, b) {
   return a.filter(x => b.indexOf(x) == -1);
 }
 // index of negative?
+
+//LeetCode challenge 1 Two Sum
+//Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
+//need to iterate through the array, starting with the first one adding up then checking if it is equal to the target number, if not, try the next one until it's reached, then print out an array with the indices
+var twoSum = function(nums, target) {
+  let output = []
+  for (let i=0; i<nums.length; i++) {
+      let testNum = nums[i]
+      for (let j=0; j<nums.length; j++) {
+          if (testNum + nums[j] === target && !output.includes(i)) {
+            output.push(i,j)
+          }
+      }
+  } return output
+};
