@@ -54,3 +54,9 @@ def is_anagram(str1, str2):
         return False
 
 print(is_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort'))
+
+#Palindrome
+def is_palindrome(str):
+    if str[::-1] == str:
+        return True
+    else: return False
