@@ -68,3 +68,21 @@ def last_digit(str):
 
 print(last_digit("Buy 1 get 2 free"))
 
+import string
+#Caeser Cipher
+def caeser_cipher(str, key):
+    encrypted_message = ""
+    uppercase = string.ascii_uppercase
+    lowercase = string.ascii_lowercase
+    for c in str:
+        if c in uppercase:
+            new = (uppercase.index(c) + key) % 26
+            encrypted_message += uppercase[new]
+        elif c in lowercase:
+            new = (lowercase.index(c) + key) % 26
+            encrypted_message += lowercase[new]
+        else:
+            encrypted_message += c
+    return encrypted_message
+
+print(caeser_cipher("Come before six oclock", 4))
