@@ -60,3 +60,11 @@ def is_palindrome(str):
     if str[::-1] == str:
         return True
     else: return False
+
+#Last Digit
+def last_digit(str):
+    nums = [c for c in str if c.isdigit()]
+    return nums[-1]
+
+print(last_digit("Buy 1 get 2 free"))
+
