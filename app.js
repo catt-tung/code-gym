@@ -100,3 +100,12 @@ var twoSumHashmap = function(nums, target) {
       matchMap[nums[i]] = i;
   }
 };
+
+//Palindrome integer
+var isPalindrome = function(x) {
+  if (Number.isInteger(x)) {
+    if (x.toString().split("").reverse().join("") === x.toString()) {
+        return true
+    } else return false
+  } else return false
+};
