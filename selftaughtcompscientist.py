@@ -86,3 +86,7 @@ def caeser_cipher(str, key):
     return encrypted_message
 
 print(caeser_cipher("Come before six oclock", 4))
+
+# Function to evaluate if a number is even or odd:
+def is_even(n):
+    return not n & 1
