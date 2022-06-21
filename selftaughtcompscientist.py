@@ -102,3 +102,22 @@ def fizzbuzz():
             print("Buzz")
         else:
             print(i)
+
+#Greatest Common Factor
+def gcf(int1, int2):
+    if int1 < 0 or int2 < 0:
+        raise ValueError("Numbers must be positive")
+    gcf = None
+    if int1 == 0:
+        gcf = i2
+    if int2 == 0:
+        gcf = i2
+
+    if int1 > int2:
+        smaller = int2
+    else:
+        smaller = int1
+    for i in range (1, smaller + 1):
+        if int1 % i == 0 and int2 % i == 0:
+            gcf = i
+    return print(gcf)
