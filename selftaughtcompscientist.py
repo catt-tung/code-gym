@@ -129,3 +129,22 @@ def gcf_euclid(x, y):
     while y != 0:
         x, y, = y, x % y
     return print(x)
+
+#Prime numbers - linear
+def is_prime(n):
+    for i in range (2, n):
+        if n % i == 0:
+            return print(False)
+        return print(True)
+
+#Prime numbers - logarithmic, find primes
+import math
+
+def is_prime(n):
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
+            return print(False)
+    return print(True)
+
+def find_primes(n):
+    return [is_prime(i) for i in range(2,n)]
