@@ -90,3 +90,15 @@ print(caeser_cipher("Come before six oclock", 4))
 # Function to evaluate if a number is even or odd:
 def is_even(n):
     return not n & 1
+
+# Fizzbuzz
+def fizzbuzz():
+    for i in range (1, 100):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
