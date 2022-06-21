@@ -121,3 +121,11 @@ def gcf(int1, int2):
         if int1 % i == 0 and int2 % i == 0:
             gcf = i
     return print(gcf)
+
+#Greatest Common Factor Euclid's Algorithm
+def gcf_euclid(x, y):
+    if y == 0:
+        x, y = y, x
+    while y != 0:
+        x, y, = y, x % y
+    return print(x)
