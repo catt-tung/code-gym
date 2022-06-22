@@ -111,3 +111,8 @@ var isPalindrome = function(x) {
 };
 
 //Runtime: 204 ms, faster than 80.06% of JavaScript online submissions for Palindrome Number. Memory Usage: 51.5 MB, less than 22.77% of JavaScript online submissions for Palindrome Number.
+
+//Check Uppercase
+String.prototype.isUpperCase = function() {
+  return String(this) === this.toUpperCase();
+}
