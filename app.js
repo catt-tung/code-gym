@@ -131,3 +131,39 @@ var runningSumReduce = function(nums) {
   nums.reduce((acc, curr, i, arr) => arr[i] += acc)
   return nums
 }
+
+//In progress - pivotIndex
+var pivotIndex = function(nums) {
+  let toLeft = []
+  let toRight = []
+  let leftSum = 0
+  let rightSum = 0
+  let theOne = -1
+  for (let i = 0; i < nums.length; i++) {
+      for (let j = i+1; j < nums.length; j++) {
+          toRight.push(nums[j])
+      }
+      if (i-1>=0) {
+          for (let k = i-1; k >= 0; k--) {
+          toLeft.push(nums[k])
+      }}
+      leftSum = toLeft.reduce((acc, a) => acc + a, 0);
+      rightSum = toRight.reduce((acc, a) => acc + a, 0);
+      console.log(toLeft, toRight)
+      console.log(i +"ls"+leftSum, "rs"+rightSum)
+      if (leftSum === rightSum) {
+          theOne = i
+          return theOne
+      } else {
+          toRight = []
+          toLeft = []
+      }
+  } return theOne
+};
+
+// if (i-1 >= 0) {
+//             toLeft.push(nums[i-1])
+//             let leftSum = toLeft.reduce((acc, a) => acc + a, 0);
+//             console.log("ls"+leftSum)
+//         }
+// let rightSum = toRight.reduce((acc, a) => acc + a, 0);
