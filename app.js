@@ -116,3 +116,13 @@ var isPalindrome = function(x) {
 String.prototype.isUpperCase = function() {
   return String(this) === this.toUpperCase();
 }
+
+//running sum
+//Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]). Return the running sum of nums.
+var runningSum = function(nums) {
+  let theSums = [nums[0]]
+  for (let i = 1; i < nums.length; i++) {
+      theSums.push(nums[i]+theSums[i-1])
+  }
+  return theSums
+}
