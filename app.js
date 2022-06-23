@@ -126,3 +126,8 @@ var runningSum = function(nums) {
   }
   return theSums
 }
+
+var runningSumReduce = function(nums) {
+  nums.reduce((acc, curr, i, arr) => arr[i] += acc)
+  return nums
+}
