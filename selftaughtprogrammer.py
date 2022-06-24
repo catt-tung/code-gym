@@ -42,3 +42,15 @@ def hangman(word):
               .format(word))
 
 hangman("cat")
+
+# OOP intro - circle area
+import math
+class Circle:
+    def __init__(self, r):
+        self.radius = r
+    def area(self):
+        return math.pi * (self.radius ** 2)
+
+
+cir1 = Circle(10)
+print(cir1.area())
