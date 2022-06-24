@@ -134,36 +134,24 @@ var runningSumReduce = function(nums) {
 
 //In progress - pivotIndex
 var pivotIndex = function(nums) {
-  let toLeft = []
-  let toRight = []
-  let leftSum = 0
-  let rightSum = 0
-  let theOne = -1
-  for (let i = 0; i < nums.length; i++) {
-      for (let j = i+1; j < nums.length; j++) {
-          toRight.push(nums[j])
-      }
-      if (i-1>=0) {
-          for (let k = i-1; k >= 0; k--) {
-          toLeft.push(nums[k])
-      }}
-      leftSum = toLeft.reduce((acc, a) => acc + a, 0);
-      rightSum = toRight.reduce((acc, a) => acc + a, 0);
-      console.log(toLeft, toRight)
-      console.log(i +"ls"+leftSum, "rs"+rightSum)
-      if (leftSum === rightSum) {
-          theOne = i
-          return theOne
-      } else {
-          toRight = []
-          toLeft = []
-      }
-  } return theOne
+    let toLeft = [];
+    let toRight = [];
+    let pivIdx = -1;
+    for (let i=0; i < nums.length; i++) {
+        //left first
+        for (let j=i-1; j >= 0; j--) {
+            toLeft.push(nums[j])
+        }
+        for (let k=i+1; k < nums.length; k++) {
+            toRight.push(nums[k])
+        }
+        console.log(toLeft, toRight)
+        if (toLeft.reduce((prev, curr) => prev + curr, 0) === toRight.reduce((prev, curr) => prev + curr, 0)) {
+            pivIdx = i
+            break
+        } else {
+            toLeft = []
+            toRight = []
+        }
+    } return pivIdx
 };
-
-// if (i-1 >= 0) {
-//             toLeft.push(nums[i-1])
-//             let leftSum = toLeft.reduce((acc, a) => acc + a, 0);
-//             console.log("ls"+leftSum)
-//         }
-// let rightSum = toRight.reduce((acc, a) => acc + a, 0);
