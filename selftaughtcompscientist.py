@@ -164,3 +164,12 @@ def move_zeroes(the_list):
 the_list = [8, 0, 3, 0, 12]
 move_zeroes(the_list)
 print(the_list)
+
+#Combining lists
+def combine_lists(list_one, list_two):
+    new_list = list(zip(list_one, list_two))
+    return print(new_list)
+
+list_one = ["one", "two", "three"]
+list_two = [1, 2, 3]
+combine_lists(list_one, list_two)
