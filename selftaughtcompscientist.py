@@ -148,3 +148,19 @@ def is_prime(n):
 
 def find_primes(n):
     return [is_prime(i) for i in range(2,n)]
+
+#Ch 9 Arrays
+#Move zeros
+def move_zeroes(the_list):
+    zero_index = 0
+    for index, n in enumerate(the_list):
+        if n != 0:
+            the_list[zero_index] = n
+            if zero_index != index:
+                the_list[index] = 0
+            zero_index += 1
+    return(the_list)
+
+the_list = [8, 0, 3, 0, 12]
+move_zeroes(the_list)
+print(the_list)

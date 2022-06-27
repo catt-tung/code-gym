@@ -43,7 +43,7 @@ def hangman(word):
 
 hangman("cat")
 
-# OOP intro - circle area
+# OOP intro - circle and triangle area
 import math
 class Circle:
     def __init__(self, r):
@@ -51,6 +51,15 @@ class Circle:
     def area(self):
         return math.pi * (self.radius ** 2)
 
-
 cir1 = Circle(10)
 print(cir1.area())
+
+class Triangle:
+    def __init__(self, w, h):
+        self.width =  w
+        self.height = h
+    def area(self):
+        return (self.width * self.height)/2
+
+tri1 = Triangle(3, 4)
+print(tri1.area())
