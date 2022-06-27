@@ -173,3 +173,19 @@ def combine_lists(list_one, list_two):
 list_one = ["one", "two", "three"]
 list_two = [1, 2, 3]
 combine_lists(list_one, list_two)
+
+# Finding duplicates - making use of Python sets
+def find_duplicates(any_iterable):
+    duplicates = []
+    a_set = set()
+
+    for item in any_iterable:
+        l1 = len(a_set)
+        a_set.add(item)
+        l2 = len(a_set)
+        if l1 == l2:
+            duplicates.append(item)
+    return print(duplicates)
+
+a_list = ["joe", "jimmy", "joe", "john", "jack", "jeremy", "john"]
+find_duplicates(a_list)
