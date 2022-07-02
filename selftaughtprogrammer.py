@@ -64,7 +64,7 @@ class Triangle:
 tri1 = Triangle(3, 4)
 print(tri1.area())
 
-# Intersection of two lists
+# Intersection of two lists, list comprehension
 list1 = [2, 43, 48, 62, 64, 28, 3]
 list2 = [1, 28, 42, 70, 2, 10, 62, 31, 4, 14]
 
@@ -73,3 +73,13 @@ def return_intersection(list1, list2):
     return list3
 
 print(return_intersection(list1, list2))
+
+# Intersection of two lists using sets
+list1 = [2, 43, 48, 62, 64, 28, 3]
+list2 = [1, 28, 42, 70, 2, 10, 62, 31, 4, 14]
+
+def return_intersection(list1, list2):
+    set1 = set(list1)
+    set2 = set(list2)
+    return print(list(set1.intersection(set2)))
+return_intersection(list1, list2)
