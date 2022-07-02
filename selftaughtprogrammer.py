@@ -83,3 +83,18 @@ def return_intersection(list1, list2):
     set2 = set(list2)
     return print(list(set1.intersection(set2)))
 return_intersection(list1, list2)
+
+#Sorting an array, evens first, odds in the end
+import array
+an_array = array.array('i', [1, 28, 42, 70, 2, 10, 62, 31, 4, 14])
+
+def return_sorted_nums(an_array):
+    new_array = []
+    for num in an_array:
+        if num % 2 == 0:
+            new_array.insert(0, num)
+        else:
+            new_array.append(num)
+    return(print(array.array('i', new_array)))
+
+return_sorted_nums(an_array)
