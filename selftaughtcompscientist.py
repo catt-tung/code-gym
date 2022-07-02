@@ -189,3 +189,5 @@ def find_duplicates(any_iterable):
 
 a_list = ["joe", "jimmy", "joe", "john", "jack", "jeremy", "john"]
 find_duplicates(a_list)
+
+#Intersection of lists methods
