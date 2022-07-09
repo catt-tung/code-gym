@@ -191,3 +191,37 @@ a_list = ["joe", "jimmy", "joe", "john", "jack", "jeremy", "john"]
 find_duplicates(a_list)
 
 #Intersection of lists methods
+# Intersection of two lists, list comprehension
+list1 = [2, 43, 48, 62, 64, 28, 3]
+list2 = [1, 28, 42, 70, 2, 10, 62, 31, 4, 14]
+
+def return_intersection(list1, list2):
+    list3 = [v for v in list1 if v in list2]
+    return list3
+
+print(return_intersection(list1, list2))
+
+# Intersection of two lists using sets
+list1 = [2, 43, 48, 62, 64, 28, 3]
+list2 = [1, 28, 42, 70, 2, 10, 62, 31, 4, 14]
+
+def return_intersection(list1, list2):
+    set1 = set(list1)
+    set2 = set(list2)
+    return print(list(set1.intersection(set2)))
+return_intersection(list1, list2)
+
+#Sorting an array, evens first, odds in the end
+import array
+an_array = array.array('i', [1, 28, 42, 70, 2, 10, 62, 31, 4, 14])
+
+def return_sorted_nums(an_array):
+    new_array = []
+    for num in an_array:
+        if num % 2 == 0:
+            new_array.insert(0, num)
+        else:
+            new_array.append(num)
+    return(print(array.array('i', new_array)))
+
+return_sorted_nums(an_array)
