@@ -64,3 +64,23 @@ class Triangle:
 tri1 = Triangle(3, 4)
 print(tri1.area())
 
+
+#Class variables
+class Rectangle():
+    recs = []
+
+    def __init__(self, w, l):
+        self.width = w
+        self.len = l
+        self.recs.append((self.width, self.len))
+
+    def print_size(self):
+        print("""{} by {}
+            """.format(self.width, self.len))
+
+r1 = Rectangle(10, 24)
+r2 = Rectangle(20, 40)
+r3 = Rectangle(100,200)
+
+print(Rectangle.recs)
+#(result is [(10, 24), (20, 40), (100, 200)])
