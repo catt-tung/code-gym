@@ -112,9 +112,10 @@ print(Square.square_list)
 
 #War
 class Card:
-    suits = ("spades", "hearts", "diaminds", "clubs")
+    suits = ("spades", "hearts", "diamonds", "clubs")
     
     values = (None, None, "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace")
+    #the 2 None values are so that the indices match up for the numbers 2-10
 
     def __init__(self, v, s):
         """suit + value are ints"""
@@ -141,8 +142,29 @@ class Card:
                 return False
         return False
 
+#look up value of suit and card to print the card a Card object represents
     def __repr__(self):
         v = self.values[self.value]+\
-            "of" + \
+            " of " + \
             self.suits[self.suit]
         return v
+
+# define a class to represent a deck of cards
+from random import shuffle
+class Deck:
+    def __init__(self):
+        self.cards = []
+        for i in range(2, 15):
+            for j in range(4):
+                self.cards\
+                    .append(Card(i, j))
+        shuffle(self.cards)
+
+    def rm_card(self):
+        if len(self.cards) == 0:
+            return
+        return self.cards.pop()
+
+deck = Deck()
+for card in deck.cards:
+    print(card)
