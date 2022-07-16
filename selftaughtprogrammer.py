@@ -89,7 +89,7 @@ class Shape():
     def what_am_i(self):
         print("I am a shape.")
 
-
+#https://github.com/calthoff/tstp/tree/master/part_II/more_object_oriented_programming/challenge
 class Square(Shape):
     square_list = []
 
@@ -109,3 +109,40 @@ a_square = Square(29)
 print(Square.square_list)
 another_square = Square(93)
 print(Square.square_list)
+
+#War
+class Card:
+    suits = ("spades", "hearts", "diaminds", "clubs")
+    
+    values = (None, None, "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace")
+
+    def __init__(self, v, s):
+        """suit + value are ints"""
+        self.value = v
+        self.suit = s
+
+    def __lt__(self, c2):
+        if self.value < c2.value:
+            return True
+        if self.value == c2.value:
+            if self.suit < c2.suit:
+                return True
+            else:
+                return False
+        return False
+
+    def __gt__(self, c2):
+        if self.value > c2.value:
+            return True
+        if self.value == c2.value:
+            if self.suit > c2.suit:
+                return True
+            else:
+                return False
+        return False
+
+    def __repr__(self):
+        v = self.values[self.value]+\
+            "of" + \
+            self.suits[self.suit]
+        return v
