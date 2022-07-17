@@ -234,3 +234,65 @@ class Game:
                 return p2.name
             return "It was a tie!"
 # (To make the game happen, game = Game(); game.play_game())
+
+#Bash tricks notes - RegEx
+# $export GREP_OPTIONS='--color=always'
+# grep Beautiful zen.txt >> will return where Beautiful is in the poem in zen.txt
+
+#Regular Expressions
+import re
+l = "Beautiful is better than ugly"
+matches = re.findall("Beautiful", l)
+print(matches)
+#ignore case
+import re
+l = "Beautiful is better than ugly"
+matches = re.findall("beautiful", l, re.IGNORECASE)
+print(matches)
+
+# Mad Libs example
+import re
+
+
+text = """Giraffes have aroused
+the curiosity of __PLURAL_NOUN__
+since earliest times. The
+giraffe is the tallest of all
+living __PLURAL_NOUN__, but
+scientists are unable to
+explain how it got its long
+__PART_OF_THE_BODY__. The
+giraffe's tremendous height,
+which might reach __NUMBER__
+__PLURAL_NOUN__, comes from
+it legs and __BODYPART__.
+"""
+
+def mad_libs(mls):
+    """
+    :param mls: String
+    with parts the user
+    should fill out surrounded
+    by double underscores.
+    Underscores cannot
+    be inside hint e.g., no
+    __hint_hint__ only
+    __hint__.
+    """
+    hints = re.findall("__.*?__",
+                    mls)
+    if hints is not None:
+        for word in hints:
+            q = "Enter a {}"\
+                .format(word)
+            new = input(q)
+            mls = mls.replace(word,
+                            new,
+                            1)
+        print('\n')
+        mls = mls.replace("\n", "")
+        print(mls)
+    else:
+        print("invalid mls")
+
+mad_libs(text)
