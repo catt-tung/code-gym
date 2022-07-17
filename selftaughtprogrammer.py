@@ -233,3 +233,4 @@ class Game:
             if p1.wins < p2.wins:
                 return p2.name
             return "It was a tie!"
+# (To make the game happen, game = Game(); game.play_game())
