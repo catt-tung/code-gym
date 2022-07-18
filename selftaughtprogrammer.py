@@ -438,3 +438,40 @@ class Queue:
 queue = Queue()
 sold = queue.simulate_line(5, 1)
 print(sold)
+
+#Reverse a list exercise
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return self.items == []
+
+    def push (self, item):
+        self.items.append(item)
+
+    def pop (self):
+        return self.items.pop()
+
+    def peek(self):
+        last = len(self.items)-1
+        return self.items[last]
+
+    def size(self):
+        return len(self.items)
+
+list1 = []
+for i in range(1,6):
+    list1.append(i)
+
+stack = Stack()
+for j in list1:
+    stack.push(j)
+
+
+reversed_stack = []
+
+for k in range(len(stack.items)):
+    reversed_stack.append(stack.pop())
+
+print(reversed_stack)
