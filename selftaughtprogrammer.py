@@ -296,3 +296,66 @@ def mad_libs(mls):
         print("invalid mls")
 
 mad_libs(text)
+
+#Stacks
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return self.items == []
+
+    def push (self, item):
+        self.items.append(item)
+
+    def pop (self):
+        self.items.pop()
+
+    def peek(self):
+        last = len(self.items)-1
+        return self.items[last]
+
+    def size(self):
+        return len(self.items)
+
+stack = Stack()
+
+for i in range(0,6):
+    stack.push(i)
+
+print(stack.peek())
+print(stack.size())
+
+#Reverse a string using a stack
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return self.items == []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        last = len(self.items)-1
+        return self.items[last]
+
+    def size(self):
+        return len(self.items)
+
+string = Stack()
+for c in "Hello":
+    string.push(c)
+
+print(string)
+
+reverse = ""
+
+for i in range(len(string.items)):
+    reverse += string.pop()
+
+print(reverse)
