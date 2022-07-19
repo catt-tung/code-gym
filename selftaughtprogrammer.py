@@ -505,6 +505,12 @@ s2 = ss(numbers, 202)
 print(s2)
 
 #Palindrome in Python 
+def is_palindrome(word):
+    word = word.lower()
+    return word[::-1] == word
+
+print(is_palindrome("iceman"))
+print(is_palindrome("wow"))
 
 #Anagram in Python
 def is_anagram(w1, w2):
