@@ -250,3 +250,13 @@ class LinkedList:
         while node is not None:
             print(node.data)
             node = node.next
+
+# Deque example
+from collections import deque
+
+d = deque()
+d.append("Harry")
+d.append("Potter")
+
+for item in d:
+    print(item)
