@@ -244,3 +244,9 @@ class LinkedList:
         while current.next:
             current = current.next
         current.next = Node(data)
+    
+    def __str__ (self):
+        node = self.head
+        while node is not None:
+            print(node.data)
+            node = node.next
