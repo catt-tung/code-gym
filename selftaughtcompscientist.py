@@ -225,3 +225,9 @@ def return_sorted_nums(an_array):
     return(print(array.array('i', new_array)))
 
 return_sorted_nums(an_array)
+
+#Creating a linked list
+class Node:
+    def__init__(self, data, next=None):
+        self.data = data
+        self.next = next
