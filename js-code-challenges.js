@@ -46,3 +46,4 @@ function mergeObjects(target, ...source) {
   let final = Object.assign(target, ...source)
   return final
 }
+
