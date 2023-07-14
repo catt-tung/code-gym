@@ -172,3 +172,8 @@ function catMouse(x){
     return 'Escaped!'
   }
 }
+
+//another solution
+// function catMouse(x) {
+//   return x.length <= 5 ? 'Caught!' : 'Escaped!';
+// }
