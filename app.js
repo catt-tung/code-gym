@@ -155,3 +155,19 @@ var pivotIndex = function(nums) {
         }
     } return pivIdx
 };
+
+//cat mouse codewars challenge
+function catMouse(x){
+  let steps = 0
+  for (let i = 0; i < x.length; i++){
+    if (x.charAt(i) == '.'){
+      steps += 1
+    }
+  }
+  if (steps % 3 == 0){
+    return 'Escaped!'
+  }
+  else {
+    return 'Caught!'
+  }
+}
